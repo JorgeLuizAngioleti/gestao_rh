@@ -22,8 +22,8 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='funcionario',
-            name='empresa',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.PROTECT, to='empresas.empresa'),
+            name='empresas',
+            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.PROTECT, to='empresas.empresas'),
             preserve_default=False,
         ),
         migrations.AddField(
