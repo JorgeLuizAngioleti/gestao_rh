@@ -1,6 +1,13 @@
 from django.urls import path
-from .views import home
+from .views import (FucionariosList,
+                    FucionariosEdit,
+                    FuncionarioDelete,
+                    FuncionarioNovo
+                    )
 urlpatterns = [
-path('', home),
+path('', FucionariosList.as_view(),name='list_funcionarios'),
+path('editar/<int:pk>/', FucionariosEdit.as_view(),name='update_funcionario'),
+path('novo/', FuncionarioNovo.as_view(),name='create_funcionario'),
+path('delete/<int:pk>/', FuncionarioDelete.as_view(),name='deletar_funcionario'),
 
 ]

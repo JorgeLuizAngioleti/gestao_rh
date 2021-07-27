@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Salvar funcionarios{% endblock %}
+{% block main %}
+<h1>Criar departamento</h1>
+<form method="post">
+	{% csrf_token %}
+	{{form.as_p}}
+	<button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+{% endblock %}
