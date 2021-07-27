@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 {% block title %}Salvar funcionarios{% endblock %}
 {% block main %}
 <h1>Criar departamento</h1>
 <form method="post">
 	{% csrf_token %}
-	{{form.as_p}}
+	{{ form|bootstrap }}
 	<button type="submit" class="btn btn-primary">Salvar</button>
 </form>
 
