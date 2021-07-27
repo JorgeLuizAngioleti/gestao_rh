@@ -7,7 +7,7 @@ class Documento(models.Model):
     descricao = models.CharField(max_length=100)
     pertence = models.ForeignKey(Funcionario,on_delete=models.PROTECT)
     arquivo = models.FileField(upload_to='documentos')
-    #redireciona a url depois de add
+    #redireciona a url depois de add, e passa o id
     def get_absolute_url(self):
         return reverse('update_funcionario',args=[self.pertence.id])
 
