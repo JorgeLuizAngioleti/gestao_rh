@@ -5,8 +5,19 @@
 <h1>Funcionario</h1>
 <form method="post">
 	{% csrf_token %}
-	{{ form|bootstrap }}
-	<button type="submit" class="btn btn-primary">Salvar</button>
-</form>
 
+	{{ form|bootstrap }}
+	<br>
+	<button type="submit" class="btn btn-primary">Salvar</button>
+</form><br>
+{{object}}
+{% if object %}
+
+<a href="{% url 'create_documentos' object.id  %}"class="btn btn-info">Adicionar documentos</a>
+
+{% for documento in object.documento_set.all %}<br>
+
+<a href="{{documento.arquivo.url}}">{{documento.descricao}}</a>
+{% endfor %}
+{%endif%}
 {% endblock %}

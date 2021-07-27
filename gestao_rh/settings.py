@@ -1,3 +1,4 @@
+import os.path
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -89,6 +90,12 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/')
+]
+MEDIA_URL = '/media/'
+#caminhos da media
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
