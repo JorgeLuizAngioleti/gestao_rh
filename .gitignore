@@ -4,3 +4,4 @@ venv
 .env
 *.pyc
 gestao_rh/__pycache__/
+.media/
