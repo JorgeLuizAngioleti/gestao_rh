@@ -10,7 +10,8 @@ class RegistroExtra(models.Model):
     horas = models.DecimalField(max_digits=5,decimal_places=2)
 
     def get_absolute_url(self):
-        return reverse('edit_hora_extra',args=[self.id])
+        return reverse('update_funcionario',args=[self.funcionario.id])
+
 
     def __str__(self):
         return self.motivo

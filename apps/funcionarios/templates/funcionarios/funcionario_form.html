@@ -10,14 +10,32 @@
 	<br>
 	<button type="submit" class="btn btn-primary">Salvar</button>
 </form><br>
-{{object}}
 {% if object %}
-
 <a href="{% url 'create_documentos' object.id  %}"class="btn btn-info">Adicionar documentos</a>
+<br>
 
-{% for documento in object.documento_set.all %}<br>
-
-<a href="{{documento.arquivo.url}}">{{documento.descricao}}</a>
+<h2>Documentos</h2>
+	<ul>
+		{% for documento in object.documento_set.all %}<br>
+		<li>
+			<a href="{{documento.arquivo.url}}">{{documento.descricao}}</a>
+		</li>
 {% endfor %}
-{%endif%}
+</ul>
+
+<br>
+<a href="{% url 'create_hora_extra' %}"class="btn btn-info">Criar banco de horas</a>
+<h2>Banco de horas</h2>
+	<ul>
+		{% for horas in object.registroextra_set.all %}<br>
+		<li>
+
+			<a href="{% url 'edit_hora_extra' horas.id %}">{{horas.motivo}}/{{horas.horas}}</a>
+		</li>
+	</ul>
+		{% endfor %}
+
+
+		<h3>Total de horas extras: {{object.total_de_hora_extra}}</h3>
+{% endif %}
 {% endblock %}
