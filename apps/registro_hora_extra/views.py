@@ -24,7 +24,7 @@ class HoraExtraList(ListView):
 
 class HoraExtraEdit(UpdateView):
     model = RegistroExtra
-    #fields = ['motivo','funcionario','horas']
+    #fields = ['motivo','funcionario','horas']#
     form_class = RegistroHoraExtraForm
 
     # metodo para colocar o user no form
