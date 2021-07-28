@@ -2,6 +2,13 @@
 {% block main %}
 {% load bootstrap %}
 {% for hora in object_list %}
-{{hora}}<br>
+	<a href="{% url 'edit_hora_extra' hora.id %}">{{hora}}</a>
+	<a href="{% url 'delete_hora_extra' hora.id %}" class="btn btn-danger">
+		deletar
+	</a><br>
 {% endfor %}
+{% if not object_list %}
+<h2>Não existem registros de horas extras</h2>
+{% endif %}
+<a href="{% url 'create_hora_extra' %}"class="btn btn-info">Criar banco de horas</a>
 {% endblock %}
