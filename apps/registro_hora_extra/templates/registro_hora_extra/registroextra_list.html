@@ -2,7 +2,7 @@
 {% block main %}
 {% load bootstrap %}
 {% for hora in object_list %}
-	<a href="{% url 'edit_hora_extra' hora.id %}">{{hora}}</a>
+	<a href="{% url 'edit_hora_extra_list' hora.id %}">{{hora.funcionario}}/{{hora.motivo}}</a>
 	<a href="{% url 'delete_hora_extra' hora.id %}" class="btn btn-danger">
 		deletar
 	</a><br>
